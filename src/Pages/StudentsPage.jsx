@@ -1,7 +1,9 @@
+import Navbar from "../Components/Navbar";
+
 function StudentsPage() {
   return (
     <div>
-      {/* // render navbar */}
+      <Navbar />
       <h1>Students Page</h1>;
     </div>
   );
