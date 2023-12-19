@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import Button from "@mui/material/Button";
 
 function NewStudentForm() {
   const formRef = useRef();
@@ -7,13 +8,13 @@ function NewStudentForm() {
     event.preventDefault();
     console.log("Form", formRef.current);
 
-    const formObject = new FormData(formRef.current)
-    const data = {}
-    for(const entry of formObject){
-      data[entry[0]] = entry[1]
+    const formObject = new FormData(formRef.current);
+    const data = {};
+    for (const entry of formObject) {
+      data[entry[0]] = entry[1];
     }
 
-    console.log(data)
+    console.log(data);
 
     let req = await fetch("http://localhost:3333/students", {
       headers: {
@@ -37,7 +38,10 @@ function NewStudentForm() {
         <input name="skill" type="text" placeholder="Skill" /> <br />
         <input name="city" type="text" placeholder="City" /> <br />
         <input name="pic" type="text" placeholder="Pic Url" /> <br />
-        <button type="submit"> Add </button> <br />
+        <Button variant="text" type="submit">
+          {" "}
+          Add
+        </Button>
       </form>
     </div>
   );
